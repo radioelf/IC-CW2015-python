@@ -36,10 +36,10 @@ def RxCapacidad(bus):
 	lectura = bus.read_word_data(0x62, 4)
 	return bus.read_byte_data(0x62, 0x04) + (bus.read_byte_data(0x62, 0x05) /100.0)
 
-# Comprobamos si no encomtranos en aleta por baja carga de la bateria 
+# Comprobamos si nos encontranos en aleta por baja carga de la bateria 
 def Rxtime(bus):
-	minuto = bus.read_word_data(0x62, 6)
-	if minuto & 0x8000:
+	alerta = bus.read_word_data(0x62, 6) >>15
+	if alerta:
 		return
 	print "!!Alerta por baja carga <4%!!"                               # defecto a 3%
 
