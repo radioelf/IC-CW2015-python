@@ -1,3 +1,4 @@
+#!/bin/python
 '''Monitorizacion de la tension y carga de una bateria de litio a travesdel IC CW2015
 para un escudo Raspi UPS Hat
 http://www.cellwise-semi.com/en/ProductView.asp?ID=154
